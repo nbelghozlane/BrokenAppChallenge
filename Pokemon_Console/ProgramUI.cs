@@ -20,19 +20,17 @@ namespace Pokemon_Console
             bool continueToRunMenu = true;
             while (continueToRunMenu)
             {
-                Console.WriteLine("What would you like to do?" +
-                    "1. See my Pokemon Team" +
-                    "2. Add new Pokemon to my Team" +
-                    "3. Update a Pokemon on my Team" +
-                    "4. Remove Pokemon from my Team" +
+                Console.WriteLine("What would you like to do?\n" +
+                    "1. See my Pokemon Team\n" +
+                    "2. Add new Pokemon to my Team\n" +
+                    "3. Update a Pokemon on my Team\n" +
+                    "4. Remove Pokemon from my Team\n" +
                     "5. Exit");
-                Console.Clear();
                 int response = int.Parse(Console.ReadLine());
                 switch (response)
                 {
                     case 1:
                         SeeMyPokemonTeam();
-                        Console.Clear();
                         break;
                     case 2:
                         AddPokemonToTeam();
@@ -51,6 +49,7 @@ namespace Pokemon_Console
                         Console.ReadKey();
                         break;
                 }
+                Console.ReadKey();
             }
         }
         private void SeedPokemonTeam()
@@ -85,7 +84,7 @@ namespace Pokemon_Console
         }
         private void AddPokemonToTeam()
         {
-            Pokemon pokemonTeam = new Pokemon();
+            List<Pokemon> pokemonTeam = new List<Pokemon>();
             if (pokemonTeam.Count >= 6)
             {
                 Console.WriteLine("You already have 6 Pokemon on your team! You cant hold more than that! Please Remove a Pokemon first!");

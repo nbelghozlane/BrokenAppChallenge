@@ -50,8 +50,7 @@ namespace Pokemon_Repository
                 {
                     //if (p.PokemonNickName == newPokemon.PokemonNickName) ////original: if (p.nickName == p.PokemonNickName) 
                     
-                    p = newPokemon;
-                    //p = new Pokemon;
+                    p.PokemonNickName = newPokemon.PokemonNickName;
                 }
             }
         }
